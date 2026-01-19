@@ -19,7 +19,14 @@ export function KeyResultCard({
   onDelete,
   onProgressUpdate,
 }: KeyResultCardProps) {
-  const isOverAchieved = keyResult.progress > 100
+  // Calculate progress if not provided or if NaN
+  const progress = 
+    keyResult.progress != null && !Number.isNaN(keyResult.progress)
+      ? keyResult.progress
+      : keyResult.targetValue > 0
+        ? (keyResult.currentValue / keyResult.targetValue) * 100
+        : 0
+  const isOverAchieved = progress > 100
 
   return (
     <Card>
@@ -40,12 +47,12 @@ export function KeyResultCard({
               isOverAchieved && 'text-green-600'
             )}
           >
-            {Math.round(keyResult.progress)}%
+            {Math.round(progress)}%
           </span>
         </div>
 
         <div className="mt-3">
-          <ProgressBar value={keyResult.progress} showLabel={false} size="sm" />
+          <ProgressBar value={progress} showLabel={false} size="sm" />
         </div>
 
         {!isReadOnly && (
