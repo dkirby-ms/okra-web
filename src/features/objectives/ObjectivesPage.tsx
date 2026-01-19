@@ -51,7 +51,7 @@ export function ObjectivesPage() {
   const handleSubmit = (data: CreateObjectiveDto) => {
     if (editingObjective) {
       updateMutation.mutate(
-        { id: editingObjective.id, data },
+        { id: editingObjective.id, data: { ...data, version: editingObjective.version } },
         {
           onSuccess: () => {
             toast.success('Objective updated successfully')

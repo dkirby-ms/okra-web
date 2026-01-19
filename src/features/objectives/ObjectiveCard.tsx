@@ -59,8 +59,8 @@ export function ObjectiveCard({ objective, timePeriod, onEdit, onDelete }: Objec
 
         <div className="mt-3 flex items-center justify-between text-sm text-muted-foreground">
           <span>
-            {objective.keyResults.length} key result
-            {objective.keyResults.length !== 1 ? 's' : ''}
+            {objective.keyResults?.length ?? 0} key result
+            {(objective.keyResults?.length ?? 0) !== 1 ? 's' : ''}
           </span>
           {!isArchived && (onEdit || onDelete) && (
             <div className="flex gap-2">
