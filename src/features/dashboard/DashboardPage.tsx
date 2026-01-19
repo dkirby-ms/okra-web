@@ -89,8 +89,8 @@ export function DashboardPage() {
                       <div className="min-w-0 flex-1">
                         <h3 className="truncate font-medium">{objective.title}</h3>
                         <p className="mt-1 text-sm text-muted-foreground">
-                          {objective.keyResults.length} key result
-                          {objective.keyResults.length !== 1 ? 's' : ''}
+                          {(objective.keyResults?.length ?? 0)} key result
+                          {(objective.keyResults?.length ?? 0) !== 1 ? 's' : ''}
                         </p>
                       </div>
                       <StatusBadge status={status} />

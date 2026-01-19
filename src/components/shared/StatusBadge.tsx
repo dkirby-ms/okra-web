@@ -29,7 +29,10 @@ const statusConfig: Record<
 }
 
 export function StatusBadge({ status, className }: StatusBadgeProps) {
-  const config = statusConfig[status]
+  const config = statusConfig[status] ?? {
+    label: status ?? 'Unknown',
+    className: 'bg-muted text-muted-foreground',
+  }
 
   return (
     <span
