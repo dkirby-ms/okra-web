@@ -37,7 +37,7 @@ export function ObjectiveForm({
   const { data: timePeriods } = useTimePeriods()
   // Handle both array and wrapped object responses
   const timePeriodsArray = Array.isArray(timePeriods) ? timePeriods : []
-  const activeTimePeriods = timePeriodsArray.filter((tp) => !tp.isArchived)
+  const activeTimePeriods = timePeriodsArray.filter((tp) => tp.status !== 'archived')
 
   const form = useForm<CreateObjectiveDto>({
     resolver: zodResolver(createObjectiveSchema),

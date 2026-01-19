@@ -17,7 +17,7 @@ interface ObjectiveCardProps {
 
 export function ObjectiveCard({ objective, timePeriod, onEdit, onDelete }: ObjectiveCardProps) {
   const status = calculateObjectiveStatus(objective, timePeriod)
-  const isArchived = timePeriod?.isArchived ?? false
+  const isArchived = timePeriod?.status === 'archived'
 
   return (
     <Card className="transition-shadow hover:shadow-md">

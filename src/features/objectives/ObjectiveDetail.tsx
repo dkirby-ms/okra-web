@@ -40,7 +40,7 @@ export function ObjectiveDetail() {
   const updateProgressMutation = useUpdateKeyResultProgress()
   const deleteMutation = useDeleteKeyResult()
 
-  const isReadOnly = timePeriod?.isArchived ?? false
+  const isReadOnly = timePeriod?.status === 'archived'
   const status = objective ? calculateObjectiveStatus(objective, timePeriod) : 'no-period'
 
   const handleOpenCreate = () => {

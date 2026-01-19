@@ -6,10 +6,16 @@ export const timePeriodSchema = z.object({
   name: z.string().min(1),
   startDate: z.string(), // ISO 8601 date string
   endDate: z.string(), // ISO 8601 date string
-  isArchived: z.boolean(),
+  status: z.enum(['active', 'archived']),
+  version: z.number(),
   createdAt: z.string().datetime(),
   updatedAt: z.string().datetime(),
 })
+
+// Helper to check if archived
+export function isTimePeriodArchived(tp: TimePeriod): boolean {
+  return tp.status === 'archived'
+}
 
 export const createTimePeriodSchema = z
   .object({
@@ -34,6 +40,7 @@ export const updateTimePeriodSchema = z
     name: z.string().min(1).optional(),
     startDate: z.string().optional(),
     endDate: z.string().optional(),
+    version: z.number().min(1),
   })
   .refine(
     (data) => {

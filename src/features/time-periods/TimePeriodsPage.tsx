@@ -48,7 +48,7 @@ export function TimePeriodsPage() {
   const handleSubmit = (data: CreateTimePeriodDto) => {
     if (editingTimePeriod) {
       updateMutation.mutate(
-        { id: editingTimePeriod.id, data },
+        { id: editingTimePeriod.id, data: { ...data, version: editingTimePeriod.version } },
         {
           onSuccess: () => {
             toast.success('Time period updated successfully')

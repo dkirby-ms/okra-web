@@ -50,8 +50,10 @@ export function TimePeriodList({
 
   // Sort: active periods first (by start date desc), then archived
   const sortedPeriods = [...timePeriods].sort((a, b) => {
-    if (a.isArchived !== b.isArchived) {
-      return a.isArchived ? 1 : -1
+    const aArchived = a.status === 'archived'
+    const bArchived = b.status === 'archived'
+    if (aArchived !== bArchived) {
+      return aArchived ? 1 : -1
     }
     return new Date(b.startDate).getTime() - new Date(a.startDate).getTime()
   })

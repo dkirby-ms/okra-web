@@ -26,9 +26,18 @@ interface TimePeriodFormProps {
 }
 
 function formatDateForInput(dateString: string): string {
+  // If already in YYYY-MM-DD format, return as-is (avoid timezone issues)
+  if (/^\d{4}-\d{2}-\d{2}$/.test(dateString)) {
+    return dateString
+  }
+  // Otherwise, try to extract the date portion
   try {
-    const date = new Date(dateString)
-    return date.toISOString().split('T')[0] ?? dateString
+    // For ISO datetime strings, just take the date part
+    const datePart = dateString.split('T')[0]
+    if (datePart && /^\d{4}-\d{2}-\d{2}$/.test(datePart)) {
+      return datePart
+    }
+    return dateString
   } catch {
     return dateString
   }

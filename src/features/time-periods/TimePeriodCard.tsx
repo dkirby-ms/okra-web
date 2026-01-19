@@ -18,7 +18,7 @@ export function TimePeriodCard({
   onArchive,
   onDelete,
 }: TimePeriodCardProps) {
-  const isArchived = timePeriod.isArchived
+  const isArchived = timePeriod.status === 'archived'
 
   return (
     <Card className={cn(isArchived && 'opacity-60')}>

@@ -24,12 +24,12 @@ import { toast } from 'sonner'
 import type { Objective, CreateObjectiveDto } from '@/types/objective'
 
 export function ObjectivesPage() {
-  const [timePeriodFilter, setTimePeriodFilter] = useState<string>('')
+  const [timePeriodFilter, setTimePeriodFilter] = useState<string>('all')
   const [sheetOpen, setSheetOpen] = useState(false)
   const [editingObjective, setEditingObjective] = useState<Objective | null>(null)
   const [deletingObjective, setDeletingObjective] = useState<Objective | null>(null)
 
-  const { data: objectives, isLoading } = useObjectives(timePeriodFilter || undefined)
+  const { data: objectives, isLoading } = useObjectives(timePeriodFilter === 'all' ? undefined : timePeriodFilter)
   const { data: timePeriods } = useTimePeriods()
   // Handle both array and wrapped object responses
   const timePeriodsArray = Array.isArray(timePeriods) ? timePeriods : []
@@ -112,10 +112,10 @@ export function ObjectivesPage() {
               <SelectValue placeholder="Filter by time period" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="">All time periods</SelectItem>
+              <SelectItem value="all">All time periods</SelectItem>
               {timePeriodsArray.map((tp) => (
                 <SelectItem key={tp.id} value={tp.id}>
-                  {tp.name} {tp.isArchived && '(Archived)'}
+                  {tp.name} {tp.status === 'archived' && '(Archived)'}
                 </SelectItem>
               ))}
             </SelectContent>
