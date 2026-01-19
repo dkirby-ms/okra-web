@@ -24,67 +24,90 @@ cd okra-web
 # Core dependencies
 npm install react-router-dom @tanstack/react-query zod react-hook-form @hookform/resolvers
 
-# UI dependencies  
-npm install tailwindcss postcss autoprefixer
-npm install clsx tailwind-merge lucide-react date-fns
+# UI dependencies (Tailwind CSS v4)
+npm install tailwindcss @tailwindcss/postcss postcss
+npm install clsx tailwind-merge lucide-react date-fns sonner
 
 # Dev dependencies
-npm install -D @types/node vitest @testing-library/react @testing-library/jest-dom jsdom msw
+npm install -D @types/node
 ```
 
-### 3. Configure Tailwind CSS
+### 3. Configure Tailwind CSS v4
 
-```bash
-npx tailwindcss init -p
-```
-
-Update `tailwind.config.ts`:
-```typescript
-import type { Config } from 'tailwindcss'
-
+Create `postcss.config.js`:
+```javascript
 export default {
-  darkMode: ['class'],
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
-  theme: {
-    extend: {
-      // shadcn/ui theme extensions added by CLI
-    },
+  plugins: {
+    '@tailwindcss/postcss': {},
   },
-  plugins: [],
-} satisfies Config
+};
 ```
 
 Update `src/index.css`:
 ```css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+/* Base styles */
+@layer base {
+  :root {
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.145 0 0);
+    /* ... additional CSS variables ... */
+  }
+}
+
+/* Additional component styles */
 ```
 
 ### 4. Initialize shadcn/ui
 
+First, add path aliases to both `tsconfig.json` and `tsconfig.app.json`:
+```json
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}
+```
+
+Then initialize shadcn/ui:
 ```bash
 npx shadcn@latest init
 ```
 
 Select options:
-- Style: Default
+- Style: Default  
 - Base color: Slate
 - CSS variables: Yes
 
 Install required components:
 ```bash
-npx shadcn@latest add button input label sheet dialog card progress toast
+npx shadcn@latest add button input label sheet dialog card progress sonner form select textarea
 ```
 
 ### 5. Configure TypeScript
 
-Ensure `tsconfig.json` has strict mode:
+Ensure `tsconfig.json` has strict mode and path aliases:
 ```json
 {
   "compilerOptions": {
     "strict": true,
     "noUncheckedIndexedAccess": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}
+```
+
+Also add path aliases to `tsconfig.app.json`:
+```json
+{
+  "compilerOptions": {
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]

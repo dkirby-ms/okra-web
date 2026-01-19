@@ -23,14 +23,14 @@
 
 **Purpose**: Project initialization and Vite + React + TypeScript scaffold
 
-- [ ] T001 Initialize Vite project with React + TypeScript template using `npm create vite@latest`
-- [ ] T002 Install core dependencies (react-router-dom, @tanstack/react-query, zod, react-hook-form, @hookform/resolvers) in package.json
-- [ ] T003 [P] Install and configure Tailwind CSS with postcss and autoprefixer in tailwind.config.ts
-- [ ] T004 [P] Initialize shadcn/ui and install required components (button, input, label, sheet, dialog, card, progress, toast) in src/components/ui/
-- [ ] T005 [P] Configure TypeScript strict mode and path aliases in tsconfig.json
-- [ ] T006 [P] Configure Vite with path aliases and API proxy in vite.config.ts
-- [ ] T007 [P] Configure ESLint and Prettier with pre-commit rules in eslint.config.js and .prettierrc
-- [ ] T008 Create environment configuration with VITE_API_BASE_URL in .env and .env.example
+- [x] T001 Initialize Vite project with React + TypeScript template using `npm create vite@latest`
+- [x] T002 Install core dependencies (react-router-dom, @tanstack/react-query, zod, react-hook-form, @hookform/resolvers) in package.json
+- [x] T003 [P] Install and configure Tailwind CSS with postcss and autoprefixer in tailwind.config.ts
+- [x] T004 [P] Initialize shadcn/ui and install required components (button, input, label, sheet, dialog, card, progress, toast) in src/components/ui/
+- [x] T005 [P] Configure TypeScript strict mode and path aliases in tsconfig.json
+- [x] T006 [P] Configure Vite with path aliases and API proxy in vite.config.ts
+- [x] T007 [P] Configure ESLint and Prettier with pre-commit rules in eslint.config.js and .prettierrc
+- [x] T008 Create environment configuration with VITE_API_BASE_URL in .env and .env.example
 
 **Checkpoint**: Project builds and runs with `npm run dev`
 
@@ -42,30 +42,30 @@
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T009 Create TypeScript types and Zod schemas for Objective in src/types/objective.ts
-- [ ] T010 [P] Create TypeScript types and Zod schemas for KeyResult in src/types/key-result.ts
-- [ ] T011 [P] Create TypeScript types and Zod schemas for TimePeriod in src/types/time-period.ts
-- [ ] T012 [P] Create TypeScript types and Zod schemas for API responses (ProgressSummary, StatusDistribution, Error) in src/types/api.ts
-- [ ] T013 Implement API client with fetch wrapper, error handling, and base URL config in src/api/client.ts
-- [ ] T014 [P] Implement Objectives API functions (list, get, create, update, delete) in src/api/objectives.ts
-- [ ] T015 [P] Implement Key Results API functions (list, listByObjective, get, create, update, updateProgress, delete) in src/api/key-results.ts
-- [ ] T016 [P] Implement Time Periods API functions (list, get, create, update, archive, delete) in src/api/time-periods.ts
-- [ ] T017 [P] Implement Reports API functions (getProgressSummary, getStatusDistribution) in src/api/reports.ts
-- [ ] T018 Create TanStack Query hooks for Objectives (useObjectives, useObjective, useCreateObjective, useUpdateObjective, useDeleteObjective) in src/hooks/useObjectives.ts
-- [ ] T019 [P] Create TanStack Query hooks for Key Results (useKeyResults, useKeyResultsByObjective, useCreateKeyResult, useUpdateKeyResult, useUpdateKeyResultProgress, useDeleteKeyResult) in src/hooks/useKeyResults.ts
-- [ ] T020 [P] Create TanStack Query hooks for Time Periods (useTimePeriods, useTimePeriod, useCreateTimePeriod, useUpdateTimePeriod, useArchiveTimePeriod, useDeleteTimePeriod) in src/hooks/useTimePeriods.ts
-- [ ] T021 [P] Create TanStack Query hooks for Reports (useProgressSummary, useStatusDistribution) in src/hooks/useReports.ts
-- [ ] T022 Implement status calculator utility (calculateObjectiveStatus) in src/lib/status-calculator.ts
-- [ ] T023 [P] Create cn() utility and date formatting helpers in src/lib/utils.ts
-- [ ] T024 Create ProgressBar shared component in src/components/shared/ProgressBar.tsx
-- [ ] T025 [P] Create StatusBadge shared component (on-track, at-risk, behind, no-period) in src/components/shared/StatusBadge.tsx
-- [ ] T026 [P] Create ConfirmDialog shared component for delete confirmations in src/components/shared/ConfirmDialog.tsx
-- [ ] T027 [P] Create EmptyState shared component for empty lists in src/components/shared/EmptyState.tsx
-- [ ] T028 Create Sidebar navigation component with collapsible sections in src/components/layout/Sidebar.tsx
-- [ ] T029 [P] Create Header component with app title in src/components/layout/Header.tsx
-- [ ] T030 Create AppShell layout component with Sidebar and Outlet in src/components/layout/AppShell.tsx
-- [ ] T031 Configure React Router with lazy-loaded routes in src/App.tsx
-- [ ] T032 Setup QueryClientProvider and Toaster in src/main.tsx
+- [x] T009 Create TypeScript types and Zod schemas for Objective in src/types/objective.ts
+- [x] T010 [P] Create TypeScript types and Zod schemas for KeyResult in src/types/key-result.ts
+- [x] T011 [P] Create TypeScript types and Zod schemas for TimePeriod in src/types/time-period.ts
+- [x] T012 [P] Create TypeScript types and Zod schemas for API responses (ProgressSummary, StatusDistribution, Error) in src/types/api.ts
+- [x] T013 Implement API client with fetch wrapper, error handling, and base URL config in src/api/client.ts
+- [x] T014 [P] Implement Objectives API functions (list, get, create, update, delete) in src/api/objectives.ts
+- [x] T015 [P] Implement Key Results API functions (list, listByObjective, get, create, update, updateProgress, delete) in src/api/key-results.ts
+- [x] T016 [P] Implement Time Periods API functions (list, get, create, update, archive, delete) in src/api/time-periods.ts
+- [x] T017 [P] Implement Reports API functions (getProgressSummary, getStatusDistribution) in src/api/reports.ts
+- [x] T018 Create TanStack Query hooks for Objectives (useObjectives, useObjective, useCreateObjective, useUpdateObjective, useDeleteObjective) in src/hooks/useObjectives.ts
+- [x] T019 [P] Create TanStack Query hooks for Key Results (useKeyResults, useKeyResultsByObjective, useCreateKeyResult, useUpdateKeyResult, useUpdateKeyResultProgress, useDeleteKeyResult) in src/hooks/useKeyResults.ts
+- [x] T020 [P] Create TanStack Query hooks for Time Periods (useTimePeriods, useTimePeriod, useCreateTimePeriod, useUpdateTimePeriod, useArchiveTimePeriod, useDeleteTimePeriod) in src/hooks/useTimePeriods.ts
+- [x] T021 [P] Create TanStack Query hooks for Reports (useProgressSummary, useStatusDistribution) in src/hooks/useReports.ts
+- [x] T022 Implement status calculator utility (calculateObjectiveStatus) in src/lib/status-calculator.ts
+- [x] T023 [P] Create cn() utility and date formatting helpers in src/lib/utils.ts
+- [x] T024 Create ProgressBar shared component in src/components/shared/ProgressBar.tsx
+- [x] T025 [P] Create StatusBadge shared component (on-track, at-risk, behind, no-period) in src/components/shared/StatusBadge.tsx
+- [x] T026 [P] Create ConfirmDialog shared component for delete confirmations in src/components/shared/ConfirmDialog.tsx
+- [x] T027 [P] Create EmptyState shared component for empty lists in src/components/shared/EmptyState.tsx
+- [x] T028 Create Sidebar navigation component with collapsible sections in src/components/layout/Sidebar.tsx
+- [x] T029 [P] Create Header component with app title in src/components/layout/Header.tsx
+- [x] T030 Create AppShell layout component with Sidebar and Outlet in src/components/layout/AppShell.tsx
+- [x] T031 Configure React Router with lazy-loaded routes in src/App.tsx
+- [x] T032 Setup QueryClientProvider and Toaster in src/main.tsx
 
 **Checkpoint**: Foundation ready - app shell renders with sidebar navigation; API hooks ready for use
 
@@ -79,19 +79,19 @@
 
 ### Implementation for User Story 1
 
-- [ ] T033 [US1] Create ProgressSummaryCard component displaying totalObjectives, averageProgress, completedObjectives in src/features/dashboard/ProgressSummaryCard.tsx
-- [ ] T034 [P] [US1] Create StatusDistributionChart component displaying buckets as visual bars/cards in src/features/dashboard/StatusDistributionChart.tsx
-- [ ] T035 [US1] Create DashboardPage with ProgressSummaryCard, StatusDistributionChart, and recent objectives list in src/features/dashboard/DashboardPage.tsx
-- [ ] T036 [US1] Create ObjectiveCard component displaying title, progress bar, time period, and status badge in src/features/objectives/ObjectiveCard.tsx
-- [ ] T037 [US1] Create ObjectiveList component with loading/empty states in src/features/objectives/ObjectiveList.tsx
-- [ ] T038 [US1] Create ObjectivesPage with ObjectiveList and time period filter dropdown in src/features/objectives/ObjectivesPage.tsx
-- [ ] T039 [US1] Create KeyResultCard component displaying title, currentValue/targetValue, progress percentage in src/features/key-results/KeyResultCard.tsx
-- [ ] T040 [US1] Create KeyResultList component for displaying key results under an objective in src/features/key-results/KeyResultList.tsx
-- [ ] T041 [US1] Create ObjectiveDetail page showing objective info and KeyResultList in src/features/objectives/ObjectiveDetail.tsx
-- [ ] T042 [US1] Add route for ObjectiveDetail at /objectives/:id in src/App.tsx
-- [ ] T043 [US1] Connect DashboardPage to useProgressSummary and useStatusDistribution hooks
-- [ ] T044 [US1] Connect ObjectivesPage to useObjectives hook with time period filter
-- [ ] T045 [US1] Connect ObjectiveDetail to useObjective and useKeyResultsByObjective hooks
+- [x] T033 [US1] Create ProgressSummaryCard component displaying totalObjectives, averageProgress, completedObjectives in src/features/dashboard/ProgressSummaryCard.tsx
+- [x] T034 [P] [US1] Create StatusDistributionChart component displaying buckets as visual bars/cards in src/features/dashboard/StatusDistributionChart.tsx
+- [x] T035 [US1] Create DashboardPage with ProgressSummaryCard, StatusDistributionChart, and recent objectives list in src/features/dashboard/DashboardPage.tsx
+- [x] T036 [US1] Create ObjectiveCard component displaying title, progress bar, time period, and status badge in src/features/objectives/ObjectiveCard.tsx
+- [x] T037 [US1] Create ObjectiveList component with loading/empty states in src/features/objectives/ObjectiveList.tsx
+- [x] T038 [US1] Create ObjectivesPage with ObjectiveList and time period filter dropdown in src/features/objectives/ObjectivesPage.tsx
+- [x] T039 [US1] Create KeyResultCard component displaying title, currentValue/targetValue, progress percentage in src/features/key-results/KeyResultCard.tsx
+- [x] T040 [US1] Create KeyResultList component for displaying key results under an objective in src/features/key-results/KeyResultList.tsx
+- [x] T041 [US1] Create ObjectiveDetail page showing objective info and KeyResultList in src/features/objectives/ObjectiveDetail.tsx
+- [x] T042 [US1] Add route for ObjectiveDetail at /objectives/:id in src/App.tsx
+- [x] T043 [US1] Connect DashboardPage to useProgressSummary and useStatusDistribution hooks
+- [x] T044 [US1] Connect ObjectivesPage to useObjectives hook with time period filter
+- [x] T045 [US1] Connect ObjectiveDetail to useObjective and useKeyResultsByObjective hooks
 
 **Checkpoint**: User Story 1 complete - Dashboard shows stats, objectives list displays with status, clicking objective shows key results
 
@@ -105,16 +105,16 @@
 
 ### Implementation for User Story 2
 
-- [ ] T046 [US2] Create ObjectiveForm component with title, description, timePeriodId fields using react-hook-form and Zod validation in src/features/objectives/ObjectiveForm.tsx
-- [ ] T047 [US2] Integrate ObjectiveForm into Sheet (slide-out panel) for create/edit modes in src/features/objectives/ObjectivesPage.tsx
-- [ ] T048 [US2] Add "New Objective" button to ObjectivesPage that opens Sheet with ObjectiveForm
-- [ ] T049 [US2] Add Edit button to ObjectiveCard/ObjectiveDetail that opens Sheet with pre-filled ObjectiveForm
-- [ ] T050 [US2] Connect ObjectiveForm submit to useCreateObjective mutation with success toast
-- [ ] T051 [US2] Connect ObjectiveForm submit to useUpdateObjective mutation for edit mode with success toast
-- [ ] T052 [US2] Add Delete button to ObjectiveCard/ObjectiveDetail with ConfirmDialog
-- [ ] T053 [US2] Connect delete confirmation to useDeleteObjective mutation with success toast
-- [ ] T054 [US2] Implement inline validation error display in ObjectiveForm (empty title, etc.)
-- [ ] T055 [US2] Add keyboard support: Escape to close Sheet, Enter to submit form
+- [x] T046 [US2] Create ObjectiveForm component with title, description, timePeriodId fields using react-hook-form and Zod validation in src/features/objectives/ObjectiveForm.tsx
+- [x] T047 [US2] Integrate ObjectiveForm into Sheet (slide-out panel) for create/edit modes in src/features/objectives/ObjectivesPage.tsx
+- [x] T048 [US2] Add "New Objective" button to ObjectivesPage that opens Sheet with ObjectiveForm
+- [x] T049 [US2] Add Edit button to ObjectiveCard/ObjectiveDetail that opens Sheet with pre-filled ObjectiveForm
+- [x] T050 [US2] Connect ObjectiveForm submit to useCreateObjective mutation with success toast
+- [x] T051 [US2] Connect ObjectiveForm submit to useUpdateObjective mutation for edit mode with success toast
+- [x] T052 [US2] Add Delete button to ObjectiveCard/ObjectiveDetail with ConfirmDialog
+- [x] T053 [US2] Connect delete confirmation to useDeleteObjective mutation with success toast
+- [x] T054 [US2] Implement inline validation error display in ObjectiveForm (empty title, etc.)
+- [x] T055 [US2] Add keyboard support: Escape to close Sheet, Enter to submit form
 
 **Checkpoint**: User Story 2 complete - Full CRUD for objectives with slide-out forms and confirmations
 
@@ -128,19 +128,19 @@
 
 ### Implementation for User Story 3
 
-- [ ] T056 [US3] Create KeyResultForm component with title, targetValue, currentValue fields using react-hook-form and Zod validation in src/features/key-results/KeyResultForm.tsx
-- [ ] T057 [US3] Create ProgressInput component for quick progress updates (input + save button) in src/features/key-results/ProgressInput.tsx
-- [ ] T058 [US3] Integrate KeyResultForm into Sheet for create/edit modes in src/features/objectives/ObjectiveDetail.tsx
-- [ ] T059 [US3] Add "Add Key Result" button to ObjectiveDetail that opens Sheet with KeyResultForm
-- [ ] T060 [US3] Add Edit button to KeyResultCard that opens Sheet with pre-filled KeyResultForm
-- [ ] T061 [US3] Connect KeyResultForm submit to useCreateKeyResult mutation with success toast
-- [ ] T062 [US3] Connect KeyResultForm submit to useUpdateKeyResult mutation for edit mode with success toast
-- [ ] T063 [US3] Integrate ProgressInput into KeyResultCard for inline progress updates
-- [ ] T064 [US3] Connect ProgressInput to useUpdateKeyResultProgress mutation with optimistic update
-- [ ] T065 [US3] Add Delete button to KeyResultCard with ConfirmDialog
-- [ ] T066 [US3] Connect delete confirmation to useDeleteKeyResult mutation with success toast
-- [ ] T067 [US3] Implement inline validation error display in KeyResultForm (empty title, targetValue <= 0, etc.)
-- [ ] T068 [US3] Handle over-achievement display (progress > 100%) with distinct styling in ProgressBar
+- [x] T056 [US3] Create KeyResultForm component with title, targetValue, currentValue fields using react-hook-form and Zod validation in src/features/key-results/KeyResultForm.tsx
+- [x] T057 [US3] Create ProgressInput component for quick progress updates (input + save button) in src/features/key-results/ProgressInput.tsx
+- [x] T058 [US3] Integrate KeyResultForm into Sheet for create/edit modes in src/features/objectives/ObjectiveDetail.tsx
+- [x] T059 [US3] Add "Add Key Result" button to ObjectiveDetail that opens Sheet with KeyResultForm
+- [x] T060 [US3] Add Edit button to KeyResultCard that opens Sheet with pre-filled KeyResultForm
+- [x] T061 [US3] Connect KeyResultForm submit to useCreateKeyResult mutation with success toast
+- [x] T062 [US3] Connect KeyResultForm submit to useUpdateKeyResult mutation for edit mode with success toast
+- [x] T063 [US3] Integrate ProgressInput into KeyResultCard for inline progress updates
+- [x] T064 [US3] Connect ProgressInput to useUpdateKeyResultProgress mutation with optimistic update
+- [x] T065 [US3] Add Delete button to KeyResultCard with ConfirmDialog
+- [x] T066 [US3] Connect delete confirmation to useDeleteKeyResult mutation with success toast
+- [x] T067 [US3] Implement inline validation error display in KeyResultForm (empty title, targetValue <= 0, etc.)
+- [x] T068 [US3] Handle over-achievement display (progress > 100%) with distinct styling in ProgressBar
 
 **Checkpoint**: User Story 3 complete - Full CRUD for key results with quick progress updates
 
@@ -154,20 +154,20 @@
 
 ### Implementation for User Story 4
 
-- [ ] T069 [US4] Create TimePeriodForm component with name, startDate, endDate fields using react-hook-form and Zod validation in src/features/time-periods/TimePeriodForm.tsx
-- [ ] T070 [US4] Create TimePeriodCard component displaying name, date range, archive status in src/features/time-periods/TimePeriodCard.tsx
-- [ ] T071 [US4] Create TimePeriodList component with loading/empty states in src/features/time-periods/TimePeriodList.tsx
-- [ ] T072 [US4] Create TimePeriodsPage with TimePeriodList and Sheet for forms in src/features/time-periods/TimePeriodsPage.tsx
-- [ ] T073 [US4] Add "New Period" button that opens Sheet with TimePeriodForm
-- [ ] T074 [US4] Add Edit button to TimePeriodCard that opens Sheet with pre-filled TimePeriodForm
-- [ ] T075 [US4] Connect TimePeriodForm submit to useCreateTimePeriod and useUpdateTimePeriod mutations
-- [ ] T076 [US4] Add Archive button to TimePeriodCard with ConfirmDialog
-- [ ] T077 [US4] Connect archive confirmation to useArchiveTimePeriod mutation with success toast
-- [ ] T078 [US4] Add Delete button to TimePeriodCard (non-archived only) with ConfirmDialog
-- [ ] T079 [US4] Connect delete confirmation to useDeleteTimePeriod mutation with success toast
-- [ ] T080 [US4] Implement read-only mode for objectives in archived time periods (disable edit/delete buttons)
-- [ ] T081 [US4] Add visual indicator for archived time periods in TimePeriodCard and ObjectiveCard
-- [ ] T082 [US4] Implement date validation in TimePeriodForm (endDate must be after startDate)
+- [x] T069 [US4] Create TimePeriodForm component with name, startDate, endDate fields using react-hook-form and Zod validation in src/features/time-periods/TimePeriodForm.tsx
+- [x] T070 [US4] Create TimePeriodCard component displaying name, date range, archive status in src/features/time-periods/TimePeriodCard.tsx
+- [x] T071 [US4] Create TimePeriodList component with loading/empty states in src/features/time-periods/TimePeriodList.tsx
+- [x] T072 [US4] Create TimePeriodsPage with TimePeriodList and Sheet for forms in src/features/time-periods/TimePeriodsPage.tsx
+- [x] T073 [US4] Add "New Period" button that opens Sheet with TimePeriodForm
+- [x] T074 [US4] Add Edit button to TimePeriodCard that opens Sheet with pre-filled TimePeriodForm
+- [x] T075 [US4] Connect TimePeriodForm submit to useCreateTimePeriod and useUpdateTimePeriod mutations
+- [x] T076 [US4] Add Archive button to TimePeriodCard with ConfirmDialog
+- [x] T077 [US4] Connect archive confirmation to useArchiveTimePeriod mutation with success toast
+- [x] T078 [US4] Add Delete button to TimePeriodCard (non-archived only) with ConfirmDialog
+- [x] T079 [US4] Connect delete confirmation to useDeleteTimePeriod mutation with success toast
+- [x] T080 [US4] Implement read-only mode for objectives in archived time periods (disable edit/delete buttons)
+- [x] T081 [US4] Add visual indicator for archived time periods in TimePeriodCard and ObjectiveCard
+- [x] T082 [US4] Implement date validation in TimePeriodForm (endDate must be after startDate)
 
 **Checkpoint**: User Story 4 complete - Full CRUD for time periods with archive functionality affecting objective editability
 
@@ -177,14 +177,14 @@
 
 **Purpose**: Final improvements that affect multiple user stories
 
-- [ ] T083 [P] Add loading skeletons for all list components (ObjectiveList, KeyResultList, TimePeriodList)
-- [ ] T084 [P] Add error boundary with user-friendly error messages and retry option in src/components/shared/ErrorBoundary.tsx
-- [ ] T085 Implement responsive sidebar collapse for mobile viewports (320px-768px) in Sidebar.tsx
-- [ ] T086 [P] Add focus management and visible focus indicators for keyboard navigation
-- [ ] T087 Verify all forms support Enter to submit and Escape to close
-- [ ] T088 [P] Add aria-labels and roles for accessibility compliance
-- [ ] T089 Run build verification (`npm run build`) and fix any TypeScript/lint errors
-- [ ] T090 Validate quickstart.md instructions work end-to-end with fresh clone
+- [x] T083 [P] Add loading skeletons for all list components (ObjectiveList, KeyResultList, TimePeriodList)
+- [x] T084 [P] Add error boundary with user-friendly error messages and retry option in src/components/shared/ErrorBoundary.tsx
+- [x] T085 Implement responsive sidebar collapse for mobile viewports (320px-768px) in Sidebar.tsx
+- [x] T086 [P] Add focus management and visible focus indicators for keyboard navigation
+- [x] T087 Verify all forms support Enter to submit and Escape to close
+- [x] T088 [P] Add aria-labels and roles for accessibility compliance
+- [x] T089 Run build verification (`npm run build`) and fix any TypeScript/lint errors
+- [x] T090 Validate quickstart.md instructions work end-to-end with fresh clone
 
 ---
 
