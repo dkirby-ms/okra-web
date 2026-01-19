@@ -1,6 +1,7 @@
 import { lazy, Suspense } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import { AppShell } from '@/components/layout/AppShell'
+import { LoginPage, ProtectedRoute } from '@/features/auth'
 
 // Lazy load feature pages
 const DashboardPage = lazy(() =>
@@ -26,44 +27,52 @@ function PageLoader() {
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route element={<AppShell />}>
-          <Route
-            index
-            element={
-              <Suspense fallback={<PageLoader />}>
-                <DashboardPage />
-              </Suspense>
-            }
-          />
-          <Route
-            path="objectives"
-            element={
-              <Suspense fallback={<PageLoader />}>
-                <ObjectivesPage />
-              </Suspense>
-            }
-          />
-          <Route
-            path="objectives/:id"
-            element={
-              <Suspense fallback={<PageLoader />}>
-                <ObjectiveDetail />
-              </Suspense>
-            }
-          />
-          <Route
-            path="time-periods"
-            element={
-              <Suspense fallback={<PageLoader />}>
-                <TimePeriodsPage />
-              </Suspense>
-            }
-          />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      {/* Public route: Login page */}
+      <Route path="login" element={<LoginPage />} />
+      
+      {/* Protected routes: Require authentication */}
+      <Route
+        element={
+          <ProtectedRoute>
+            <AppShell />
+          </ProtectedRoute>
+        }
+      >
+        <Route
+          index
+          element={
+            <Suspense fallback={<PageLoader />}>
+              <DashboardPage />
+            </Suspense>
+          }
+        />
+        <Route
+          path="objectives"
+          element={
+            <Suspense fallback={<PageLoader />}>
+              <ObjectivesPage />
+            </Suspense>
+          }
+        />
+        <Route
+          path="objectives/:id"
+          element={
+            <Suspense fallback={<PageLoader />}>
+              <ObjectiveDetail />
+            </Suspense>
+          }
+        />
+        <Route
+          path="time-periods"
+          element={
+            <Suspense fallback={<PageLoader />}>
+              <TimePeriodsPage />
+            </Suspense>
+          }
+        />
+      </Route>
+    </Routes>
   )
 }
 
